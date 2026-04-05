@@ -35,7 +35,7 @@ open class FloatingNotificationBanner: GrowingNotificationBanner {
         style: BannerStyle = .info,
         colors: BannerColorsProtocol? = nil,
         iconPosition: IconPosition = .center,
-        sideViewSize: CGFloat
+        sideViewSize: CGFloat = 24
     ) {
 
         super.init(
