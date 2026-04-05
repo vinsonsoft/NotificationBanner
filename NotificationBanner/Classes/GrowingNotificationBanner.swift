@@ -75,12 +75,16 @@ open class GrowingNotificationBanner: BaseNotificationBanner {
                     minHeight = 64.0
                 }
                 
-                var actualBannerHeight = topOffset + titleHeight + subtitleHeight + verticalSpacing
-                
+                var contentHeight = topOffset + titleHeight + subtitleHeight + verticalSpacing
+
                 if !subtitleHeight.isZero && !titleHeight.isZero {
-                    actualBannerHeight += innerSpacing
+                    contentHeight += innerSpacing
                 }
-                
+
+                let sideViewHeight = topOffset + sideViewSize + verticalSpacing
+
+                let actualBannerHeight = max(contentHeight, sideViewHeight)
+
                 return heightAdjustment + max(actualBannerHeight, minHeight)
             }
         } set {
