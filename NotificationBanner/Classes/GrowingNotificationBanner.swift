@@ -220,30 +220,30 @@ public extension GrowingNotificationBanner {
             contentView.layer.cornerRadius = cornerRadius
         }
         
-        if let titleFont = titleFont {
+        if let titleLabel = titleLabel, let titleFont = titleFont {
             self.titleFont = titleFont
-            titleLabel?.font = titleFont
+            titleLabel.font = titleFont
         }
         
-        if let titleColor = titleColor {
-            titleLabel?.textColor = titleColor
+        if let titleLabel = titleLabel, let titleColor = titleColor {
+            titleLabel.textColor = titleColor
         }
         
-        if let titleTextAlign = titleTextAlign {
-            titleLabel?.textAlignment = titleTextAlign
+        if let titleLabel = titleLabel, let titleTextAlign = titleTextAlign {
+            titleLabel.textAlignment = titleTextAlign
         }
         
-        if let subtitleFont = subtitleFont {
+        if let subtitleLabel = subtitleLabel, let subtitleFont = subtitleFont {
             self.subtitleFont = subtitleFont
-            subtitleLabel?.font = subtitleFont
+            subtitleLabel.font = subtitleFont
         }
         
-        if let subtitleColor = subtitleColor {
-            subtitleLabel?.textColor = subtitleColor
+        if let subtitleLabel = subtitleLabel, let subtitleColor = subtitleColor {
+            subtitleLabel.textColor = subtitleColor
         }
         
-        if let subtitleTextAlign = subtitleTextAlign {
-            subtitleLabel?.textAlignment = subtitleTextAlign
+        if let subtitleLabel = subtitleLabel, let subtitleTextAlign = subtitleTextAlign {
+            subtitleLabel.textAlignment = subtitleTextAlign
         }
         
         if titleFont != nil || subtitleFont != nil {
