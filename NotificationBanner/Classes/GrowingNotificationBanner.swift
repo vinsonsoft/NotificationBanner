@@ -13,7 +13,7 @@
  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR
  ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
  THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
+ s
  */
 
 import UIKit
@@ -156,20 +156,20 @@ open class GrowingNotificationBanner: BaseNotificationBanner {
         
         if let title = title {
             titleLabel = UILabel()
-            titleLabel!.font = titleFont
-            titleLabel!.numberOfLines = 0
-            titleLabel!.textColor = .white
-            titleLabel!.text = title
-            titleLabel!.setContentHuggingPriority(.required, for: .vertical)
+            titleLabel?.font = titleFont
+            titleLabel?.numberOfLines = 0
+            titleLabel?.textColor = .white
+            titleLabel?.text = title
+            titleLabel?.setContentHuggingPriority(.required, for: .vertical)
             labelsView.addArrangedSubview(titleLabel!)
         }
         
         if let subtitle = subtitle {
             subtitleLabel = UILabel()
-            subtitleLabel!.font = subtitleFont
-            subtitleLabel!.numberOfLines = 0
-            subtitleLabel!.textColor = .white
-            subtitleLabel!.text = subtitle
+            subtitleLabel?.font = subtitleFont
+            subtitleLabel?.numberOfLines = 0
+            subtitleLabel?.textColor = .white
+            subtitleLabel?.text = subtitle
             if title == nil {
                 subtitleLabel!.setContentHuggingPriority(.required, for: .vertical)
             }
@@ -222,28 +222,28 @@ public extension GrowingNotificationBanner {
         
         if let titleFont = titleFont {
             self.titleFont = titleFont
-            titleLabel!.font = titleFont
+            titleLabel?.font = titleFont
         }
         
         if let titleColor = titleColor {
-            titleLabel!.textColor = titleColor
+            titleLabel?.textColor = titleColor
         }
         
         if let titleTextAlign = titleTextAlign {
-            titleLabel!.textAlignment = titleTextAlign
+            titleLabel?.textAlignment = titleTextAlign
         }
         
         if let subtitleFont = subtitleFont {
             self.subtitleFont = subtitleFont
-            subtitleLabel!.font = subtitleFont
+            subtitleLabel?.font = subtitleFont
         }
         
         if let subtitleColor = subtitleColor {
-            subtitleLabel!.textColor = subtitleColor
+            subtitleLabel?.textColor = subtitleColor
         }
         
         if let subtitleTextAlign = subtitleTextAlign {
-            subtitleLabel!.textAlignment = subtitleTextAlign
+            subtitleLabel?.textAlignment = subtitleTextAlign
         }
         
         if titleFont != nil || subtitleFont != nil {
