@@ -14,22 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let navigationController = UINavigationController(rootViewController: ExampleViewController())
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [navigationController]
-        
-        let tab = tabBarController.tabBar.items![0]
-        tab.image = #imageLiteral(resourceName: "tab_bar_icon").withRenderingMode(.alwaysOriginal)
-        tab.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-        tab.title = nil
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
-        window?.rootViewController = tabBarController
-        window?.makeKeyAndVisible()
-    
         return true
+    }
+
+    // MARK: UISceneSession Lifecycle
+
+    func application(_ application: UIApplication,
+                     configurationForConnecting connectingSceneSession: UISceneSession,
+                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

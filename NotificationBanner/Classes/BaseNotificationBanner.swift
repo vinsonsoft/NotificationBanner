@@ -519,6 +519,10 @@ open class BaseNotificationBanner: UIView {
             return 0
         }
 
+        if #available(iOS 13.0, *),
+           let statusBarManager = NotificationBannerUtilities.sceneWindow?.windowScene?.statusBarManager {
+            return statusBarManager.statusBarFrame.height
+        }
         return UIApplication.shared.statusBarFrame.height
     }
 
@@ -702,13 +706,13 @@ open class BaseNotificationBanner: UIView {
 
     internal func shouldAdjustForDynamicIsland() -> Bool {
         return NotificationBannerUtilities.hasDynamicIsland()
-            && UIApplication.shared.statusBarOrientation.isPortrait
+            && NotificationBannerUtilities.isPortraitOrientation()
             && (self.parentViewController?.navigationController?.isNavigationBarHidden ?? true)
     }
     
     internal func shouldAdjustForNotchFeaturedIphone() -> Bool {
         return NotificationBannerUtilities.isNotchFeaturedIPhone()
-            && UIApplication.shared.statusBarOrientation.isPortrait
+            && NotificationBannerUtilities.isPortraitOrientation()
             && (self.parentViewController?.navigationController?.isNavigationBarHidden ?? true)
     }
     /**
